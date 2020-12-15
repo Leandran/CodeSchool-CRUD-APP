@@ -1,9 +1,9 @@
-<p id="notice"><%= notice %></p>
+
 
 <h1>Students</h1>
 
-<table>
-  <thead>
+<table class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
     <tr>
       <th>First name</th>
       <th>Last name</th>
@@ -29,10 +29,15 @@
         <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-  </tbody>
+    </tbody>
 </table>
 
-<br>
+<br><br><br><br><br>
+ <p>We advise all students to get in contact with other learners in the same course,
+ this will assist in your path as some of our courses have a steep learning curve.</p>
+ <br>
+ <p>Our suggestion would be to start a whatsapp or discord group, however this is not mandatory and you are welcome to continue your chosen course independently.</p>
 
  <%#<%= link_to 'New Student', new_student_path %>
- 
+<br><br><br>
+<%= link_to 'home', root_path, class:"btn btn-secondary" %>

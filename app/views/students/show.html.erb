@@ -1,34 +1,11 @@
-<p id="notice"><%= notice %></p>
+
 
 <p>
-  <strong>First name:</strong>
-  <%= @student.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @student.last_name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @student.email %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @student.phone %>
-</p>
-
-<p>
-  <strong>Twitter:</strong>
-  <%= @student.twitter %>
-</p>
-
-<p>
-  <strong>Course:</strong>
-  <%= @student.course %>
-</p>
-
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<div class="jumbotron">
+  <h1 class="display-4"><%= @student.first_name %> <%= @student.last_name %></h1>
+  <p class="lead"><%= @student.email %> | <%= @student.phone %> | <%= @student.twitter %> | <%= @student.course %> |</p>
+  <br><br>
+  <%= link_to 'Edit', edit_student_path(@student), class:"btn btn-secondary"%> 
+  <%= link_to 'Back', students_path, class:"btn btn-secondary btn-dark"%>
+  </p>
+</div>
