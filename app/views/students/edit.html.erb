@@ -2,5 +2,8 @@
 <br>
 <%= render 'form', student: @student %>
 <br><br>
-<%= link_to 'Show', @student, class:"btn btn-secondary" %> 
-<%= link_to 'Back', students_path, class:"btn btn-dark" %>
+<div>
+<%= link_to 'Show', @student, class:"btn btn-secondary mr-1" %> 
+ <%= link_to 'Delete', @student, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger mr-1" %>
+ <%= link_to 'Back', students_path, class:"btn btn-dark" %>
+</div>
