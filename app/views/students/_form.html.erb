@@ -40,6 +40,12 @@
     <% form.label :course %>
     <%= form.text_field :course, class:"form-control", placeholder:"Course" %>
   </div>
+  <div class="field form-group">
+    <%= form.number_field :user_id, 
+    id: :student_user_id, class:"form-control", value:
+    current_user.id, type: :hidden %>
+    
+  </div>
   <br><br>
   <div class="actions">
     <%= form.submit class:"btn btn-secondary" %>

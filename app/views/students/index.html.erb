@@ -10,6 +10,10 @@
       <th>Phone</th>
       <th>Twitter</th>
       <th>Course</th>
+      <th>User Id</th>
+      <th></th>
+      <th></th>
+      <th></th>
       
     </tr>
   </thead>
@@ -24,9 +28,10 @@
         <td><%= student.phone %></td>
         <td><%= student.twitter %></td>
         <td><%= student.course %></td>
-       <!-- <td><%= link_to 'View Student', student %></td>
+        <td><%= student.user_id %></td>
+        <td><%= link_to 'View Student', student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
     </tbody>
