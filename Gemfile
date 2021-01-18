@@ -5,7 +5,7 @@ ruby '2.6.6'
 
 gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.4'
-gem 'sqlite3'
+
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -21,10 +21,13 @@ group :development, :test do
 end
 
 group :development do
-  
   gem 'web-console', '>= 3.3.0'
+  gem 'sqlite3'
 end
 
+group :production do
+  gem 'pg', '~> 1.2', '>= 1.2.3'
+end
 group :test do
   
   gem 'capybara', '>= 2.15'
