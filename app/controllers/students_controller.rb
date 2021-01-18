@@ -1,6 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /students
   # GET /students.json
@@ -15,7 +16,8 @@ class StudentsController < ApplicationController
 
   # GET /students/new
   def new
-    @student = Student.new
+    #@student = Student.new
+    @student = current_user.students.build
   end
 
   # GET /students/1/edit
@@ -25,7 +27,9 @@ class StudentsController < ApplicationController
   # POST /students
   # POST /students.json
   def create
-    @student = Student.new(student_params)
+    #@student = Student.new(student_params)
+    @student = current_user.students.build(student_params)
+
 
     respond_to do |format|
       if @student.save
@@ -62,6 +66,12 @@ class StudentsController < ApplicationController
     end
   end
 
+  def correct_user
+    @student = current_user.students.find_by(id: params[:id])
+    redirect_to students_path, notice: "Not Authorized To Edit This Student" if @student.nil?
+  end
+  
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_student
